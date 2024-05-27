@@ -6,10 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     private float Move;
-    public float jumpForce;
-    public float maxJumpTime;
-    private float jumpTimeCounter;
-    private bool isJumping;
+    public float minJumpForce;
+    public float maxJumpForce;
+    private float jumpCharge;
+    public float maxJumpChargeTime;
+    private float jumpChargeTimeCounter;
+    private bool isChargingJump;
     private bool isGrounded;
 
     private Rigidbody2D rb;
@@ -23,32 +25,37 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+        if (!isChargingJump)
+        {
+            Move = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            isJumping = true;
-            jumpTimeCounter = 0f;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            isChargingJump = true;
+            jumpChargeTimeCounter = 0f;
+            jumpCharge = minJumpForce;
+            rb.velocity = new Vector2(0, rb.velocity.y);  // Stop horizontal movement while charging jump
         }
 
-        if (Input.GetButton("Jump") && isJumping)
+        if (Input.GetButton("Jump") && isChargingJump)
         {
-            if (jumpTimeCounter < maxJumpTime)
+            if (jumpChargeTimeCounter < maxJumpChargeTime)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                jumpTimeCounter += Time.deltaTime;
+                jumpChargeTimeCounter += Time.deltaTime;
+                jumpCharge = Mathf.Lerp(minJumpForce, maxJumpForce, jumpChargeTimeCounter / maxJumpChargeTime);
             }
             else
             {
-                isJumping = false;
+                jumpCharge = maxJumpForce;
             }
         }
 
-        if (Input.GetButtonUp("Jump"))
+        if (Input.GetButtonUp("Jump") && isChargingJump)
         {
-            isJumping = false;
+            isChargingJump = false;
+            rb.velocity = new Vector2(rb.velocity.x, jumpCharge);
         }
     }
 
@@ -57,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            isJumping = false;
         }
     }
 
