@@ -6,10 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     private float Move;
-    public float jump;
-    public bool isJumping;
+    public float jumpForce;
+    public float maxJumpTime;
+    private float jumpTimeCounter;
+    private bool isJumping;
+    private bool isGrounded;
 
     private Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +24,31 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move = Input.GetAxis("Horizontal");
-
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
-        if(Input.GetButtonDown("Jump") && isJumping == false)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
+            isJumping = true;
+            jumpTimeCounter = 0f;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if (Input.GetButton("Jump") && isJumping)
+        {
+            if (jumpTimeCounter < maxJumpTime)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpTimeCounter += Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
         }
     }
 
@@ -33,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
+            isGrounded = true;
             isJumping = false;
         }
     }
@@ -41,8 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            isJumping = true;
+            isGrounded = false;
         }
     }
-
 }

@@ -1004,8 +1004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5.77
-  jump: 500
-  isJumping: 0
+  jumpForce: 5
+  maxJumpTime: 1
 --- !u!1 &967176135
 GameObject:
   m_ObjectHideFlags: 0
