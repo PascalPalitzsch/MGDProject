@@ -228,7 +228,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1b05a0f214440c24cb68e842b27c43e9, type: 3}
   m_Color: {r: 0.17501779, g: 0.6509434, b: 0.23219179, a: 1}
   m_FlipX: 0
@@ -602,6 +602,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8037526975037356652, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9022485569508384951, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
       propertyPath: m_Name
       value: brick (2)
@@ -740,6 +744,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3755034152888365996, guid: 4f6d5756c9a12574f91ea1159d0d37b0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4307537926039382039, guid: 4f6d5756c9a12574f91ea1159d0d37b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2
@@ -849,9 +857,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1b05a0f214440c24cb68e842b27c43e9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6415094, g: 0.23905303, b: 0.23905303, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1262,6 +1270,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8037526975037356652, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9022485569508384951, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
       propertyPath: m_Name
       value: brick (1)
@@ -1452,6 +1464,10 @@ PrefabInstance:
     - target: {fileID: 6981980149244006958, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037526975037356652, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9022485569508384951, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
       propertyPath: m_Name
@@ -1676,7 +1692,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1690815182
 RectTransform:
@@ -1756,7 +1772,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 326572381
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8043a63a3f2025a49ba8ba900a9e0cbc, type: 3}
@@ -1913,6 +1929,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3755034152888365996, guid: 4f6d5756c9a12574f91ea1159d0d37b0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4307537926039382039, guid: 4f6d5756c9a12574f91ea1159d0d37b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.2
@@ -1970,6 +1990,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 980364096619893739, guid: 6c10007881fda7d4dba586a9ab90590c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5847129151704872158, guid: 6c10007881fda7d4dba586a9ab90590c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.14
@@ -2067,6 +2091,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8037526975037356652, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9022485569508384951, guid: 96a5b63843030474482a1fa2bda33bbf, type: 3}
       propertyPath: m_Name
       value: brick
@@ -2088,13 +2116,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ground
       objectReference: {fileID: 0}
+    - target: {fileID: 6275267291329927931, guid: 0817fadc60abbe64788744ae4932a39a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7508308735671250660, guid: 0817fadc60abbe64788744ae4932a39a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 7508308735671250660, guid: 0817fadc60abbe64788744ae4932a39a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.68
+      value: -7.98
       objectReference: {fileID: 0}
     - target: {fileID: 7508308735671250660, guid: 0817fadc60abbe64788744ae4932a39a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2148,7 +2180,7 @@ SceneRoots:
   - {fileID: 1536030791}
   - {fileID: 4100754382912046783}
   - {fileID: 299008177}
-  - {fileID: 2025808941}
-  - {fileID: 1690815182}
   - {fileID: 1163176454}
   - {fileID: 1066028158}
+  - {fileID: 1690815182}
+  - {fileID: 2025808941}
