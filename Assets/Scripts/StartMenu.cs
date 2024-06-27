@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;  // Stelle sicher, dass du die TextMeshPro-Namespaces verwendest
+using TMPro;
 using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
-    public TMP_InputField nameInputField; // Ändere das Typ des InputFields zu TMP_InputField
-    public Button startButton; // Button bleibt gleich
+    public TMP_InputField nameInputField;
+    public Button startButton;
 
     void Start()
     {
@@ -17,6 +17,7 @@ public class StartMenu : MonoBehaviour
     {
         string playerName = nameInputField.text;
         PlayerPrefs.SetString("PlayerName", playerName);
-        SceneManager.LoadScene("level 1"); // Ändere dies zu deiner Levelszene
+        PlayerPrefs.SetFloat("StartTime", Time.time);
+        SceneManager.LoadScene("level 1");
     }
 }

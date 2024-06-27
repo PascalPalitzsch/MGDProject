@@ -1,27 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EndLine : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private HighscoreManager highscoreManager;
+
     void Start()
     {
-        
+        highscoreManager = HighscoreManager.Instance;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("level 2");
+            string playerName = PlayerPrefs.GetString("PlayerName", "Unknown");
+            float startTime = PlayerPrefs.GetFloat("StartTime", 0f);
+            float completionTime = Time.time - startTime;
+
+            highscoreManager.AddHighscore(playerName, completionTime);
+
+            // Um sicherzustellen, dass die Szene nur einmal geladen wird
+            if (SceneManager.GetActiveScene().name != "level 2")
+            {
+                SceneManager.LoadScene("level 2");
+            }
         }
     }
 }

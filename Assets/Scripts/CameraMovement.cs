@@ -5,15 +5,24 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public GameObject target;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        if (target == null)
+        {
+            Debug.LogError("Target not set for CameraMovement.");
+        }
+        else
+        {
+            Debug.Log("Target set for CameraMovement: " + target.name);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, target.transform.position.y, -10);
+        if (target != null)
+        {
+            transform.position = new Vector3(transform.position.x, target.transform.position.y, -10);
+        }
     }
 }
