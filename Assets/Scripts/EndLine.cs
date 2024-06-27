@@ -21,9 +21,9 @@ public class EndLine : MonoBehaviour
             highscoreManager.AddHighscore(playerName, completionTime);
 
             // Um sicherzustellen, dass die Szene nur einmal geladen wird
-            if (SceneManager.GetActiveScene().name != "level 2")
+            if (SceneManager.GetActiveScene().name != "Final")
             {
-                SceneManager.LoadScene("level 2");
+                SceneManager.LoadScene("Final");
             }
         }
     }
